@@ -1,0 +1,50 @@
+<section>
+  <div class="row">
+    <div class="col-6">
+      <div class="image-container">
+        <img src="images/images.jpg" class="w-100" />
+      </div>
+    </div>
+    <div class="col-6 ">
+      <div class="everyone">
+        <div class="content pt-5">
+          <div class="logo text-center mt-100 mb-500">
+            <img src="images/logo.png" />
+          </div>
+        </div>
+        <div class="cont-titel mb-5 mt-5 ml-50">
+          <p class="titel">Welcome back!</p>
+          <h1 class="dis">Login to your account</h1>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+          <mat-form-field class="example-full-width">
+            <mat-label>email</mat-label>
+            <input matInput placeholder="john@gmail.com" formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field>
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password"/>
+    <button
+      matIconButton
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+    >
+      <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <div class="example-button-row">
+    <button class="loginbtn" type="submit" matButton="filled">Login</button>
+  </div>
+   <div class="example-button-row">
+    <button class="Reginbtn"  matButton="outlined">Register</button>
+  </div>
+        </form>
+      </div>
+      <!--everyone-->
+    </div>
+  </div>
+</section>
+<!---57-->
